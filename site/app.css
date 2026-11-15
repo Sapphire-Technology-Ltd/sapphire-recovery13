@@ -1,0 +1,28 @@
+:root{color-scheme:dark;--bg:#0A0F2C;--card:#121a46;--line:#26306b;--text:#F2F4FB;--muted:#A9B2CE;--accent:#4651C9;--accent2:#0096d4;--bad:#ff8a8a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:560px;margin:0 auto;padding:20px 16px 40px}
+header{display:flex;gap:14px;align-items:center;margin-bottom:18px}
+.logo{width:60px;height:60px;flex:none}
+h1{font-size:21px;margin:0}h2{font-size:16px;margin:0 0 4px}
+.muted{color:var(--muted);margin:0}.small{font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:0 0 14px}
+label{display:block;font-size:13px;color:var(--muted);margin:12px 0 4px}
+input{width:100%;font:inherit;font-size:17px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#0b1236;color:var(--text)}
+input:focus{outline:2px solid var(--accent2);outline-offset:1px}
+.pw{display:flex;gap:8px}.pw input{flex:1}
+button{font:inherit;border-radius:10px;border:1px solid var(--line);background:#1b2668;color:var(--text);padding:10px 14px;cursor:pointer}
+button.pri{background:var(--accent);border-color:var(--accent);margin-top:14px;width:100%;font-weight:600}
+button.ghost{background:none}
+.tabs{display:flex;gap:6px;margin:0 0 14px}.tabs button{flex:1}.tabs button[aria-selected=true]{background:var(--accent);border-color:var(--accent)}
+.out{margin:14px 0 0;padding:14px;border-radius:10px;background:#0b1236;border:1px solid var(--line)}
+.out .k{display:block;font-size:13px;color:var(--muted)}
+.big{display:block;font-size:34px;letter-spacing:4px;font-variant-numeric:tabular-nums}
+dl.out dt{font-size:13px;color:var(--muted);margin-top:8px}dl.out dt:first-child{margin-top:0}
+dl.out dd{margin:2px 0 0;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mono{font-family:ui-monospace,Consolas,monospace;font-size:16px;word-break:break-all}
+.cp{padding:4px 10px;font-size:13px}
+details{margin-top:10px}summary{cursor:pointer;color:var(--muted)}
+.warn{color:var(--bad);font-weight:600}
+footer{margin-top:24px}
+a{color:#8fd3f5}

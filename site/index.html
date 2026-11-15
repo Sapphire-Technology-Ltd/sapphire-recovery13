@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; manifest-src 'self'; connect-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A0F2C">
+<title>Sapphire Pulse recovery</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<main>
+  <header><img src="icon.svg" alt="" class="logo"><div><h1>Sapphire Pulse recovery</h1><p class="muted">For a device in locked mode when Sapphire can’t be reached. Works with no internet.</p></div></header>
+
+  <p id="bad" class="warn" hidden>This copy of the app isn’t working out codes correctly. Don’t use it: use the copy in 1Password.</p>
+
+  <section class="card">
+    <h2>1. Master key</h2>
+    <p class="muted small">From 1Password. It stays on this page only: it isn’t saved or sent anywhere, and it’s cleared after 5 minutes.</p>
+    <label for="mk">Master key</label>
+    <div class="pw"><input id="mk" type="password" autocomplete="off" autocapitalize="off" spellcheck="false"><button type="button" id="mkshow" class="ghost">Show</button></div>
+    <label for="rid">Recovery ID</label>
+    <input id="rid" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="On the lock screen, under “Can’t reach Sapphire?”">
+  </section>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="reply">Lock screen number</button>
+    <button role="tab" aria-selected="false" data-tab="pw">Passwords</button>
+  </nav>
+
+  <section class="card" id="t-reply">
+    <h2>2. The number on the lock screen</h2>
+    <p class="muted small">On the device, press “Can’t reach Sapphire?”. Type the 6-digit number it shows. The reply opens the desktop for an hour, once.</p>
+    <label for="ch">Number</label>
+    <input id="ch" inputmode="numeric" autocomplete="off" maxlength="7" placeholder="123 456">
+    <button type="button" id="go1" class="pri">Get the reply</button>
+    <div class="out" id="o1" hidden><span class="k">Type this on the lock screen</span><b id="r1" class="big"></b></div>
+  </section>
+
+  <section class="card" id="t-pw" hidden>
+    <h2>2. Passwords</h2>
+    <p class="muted small">Only if the lock screen itself won’t start. At the Windows sign-in, choose Other user, or press Ctrl+Alt+Del and Switch user, and sign in as SapphireAdmin.</p>
+    <label for="an">Admin no. <span class="muted small">(on the lock screen; 0 if you can’t see it)</span></label>
+    <input id="an" inputmode="numeric" value="0" maxlength="4">
+    <details><summary class="small">Other numbers</summary>
+      <label for="un">Everyday account’s password no.</label><input id="un" inputmode="numeric" value="0" maxlength="4">
+      <label for="bn">BitLocker password no.</label><input id="bn" inputmode="numeric" value="0" maxlength="4">
+    </details>
+    <button type="button" id="go2" class="pri">Show the passwords</button>
+    <dl class="out" id="o2" hidden>
+      <dt>SapphireAdmin</dt><dd><b id="p1" class="mono"></b><button type="button" class="ghost cp" data-cp="p1">Copy</button></dd>
+      <dt>Sapphire (everyday account)</dt><dd><b id="p2" class="mono"></b><button type="button" class="ghost cp" data-cp="p2">Copy</button></dd>
+      <dt>BitLocker recovery password</dt><dd><b id="p3" class="mono"></b><button type="button" class="ghost cp" data-cp="p3">Copy</button></dd>
+    </dl>
+    <p class="muted small">If the admin password doesn’t work, try the Admin no. one higher: the device may have just changed it.</p>
+  </section>
+
+  <p id="err" class="warn" hidden></p>
+  <p class="muted small dl">Also as <a href="download/sapphire-recovery.html" download>one file</a> to keep in 1Password, and for the command line on <a href="download/sapphire-recovery-windows-amd64.exe" download>Windows</a>, <a href="download/sapphire-recovery-linux-amd64" download>Linux</a> and Mac (<a href="download/sapphire-recovery-darwin-arm64" download>Apple chip</a>, <a href="download/sapphire-recovery-darwin-amd64" download>Intel</a>).</p>
+  <footer class="muted small">Write down who used this and why, and tell the Sapphire team, so it can be logged. © 2026 Sapphire Technology Ltd. All rights reserved.</footer>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>
