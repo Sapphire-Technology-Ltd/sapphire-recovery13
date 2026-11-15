@@ -20,12 +20,17 @@
   <p id="bad" class="warn" hidden>This copy of the app isn’t working out codes correctly. Don’t use it: use the copy in 1Password.</p>
 
   <section class="card">
-    <h2>1. Master key</h2>
+    <h2>1. On the device</h2>
+    <p class="muted small">On the lock screen, press “Can’t reach Sapphire?”. A box shows the <b>Recovery ID</b>, the <b>Admin no.</b> and a 6-digit <b>Number</b>. Keep it open.</p>
+    <label for="rid">Recovery ID</label>
+    <input id="rid" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="For example ST-13-0014">
+  </section>
+
+  <section class="card">
+    <h2>2. Master key</h2>
     <p class="muted small">From 1Password. It stays on this page only: it isn’t saved or sent anywhere, and it’s cleared after 5 minutes.</p>
     <label for="mk">Master key</label>
     <div class="pw"><input id="mk" type="password" autocomplete="off" autocapitalize="off" spellcheck="false"><button type="button" id="mkshow" class="ghost">Show</button></div>
-    <label for="rid">Recovery ID</label>
-    <input id="rid" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="On the lock screen, under “Can’t reach Sapphire?”">
   </section>
 
   <nav class="tabs" role="tablist">
@@ -34,8 +39,8 @@
   </nav>
 
   <section class="card" id="t-reply">
-    <h2>2. The number on the lock screen</h2>
-    <p class="muted small">On the device, press “Can’t reach Sapphire?”. Type the 6-digit number it shows. The reply opens the desktop for an hour, once.</p>
+    <h2>3. The Number</h2>
+    <p class="muted small">Type the 6-digit Number from the same box. Type the reply on the lock screen: it opens the desktop for an hour, once.</p>
     <label for="ch">Number</label>
     <input id="ch" inputmode="numeric" autocomplete="off" maxlength="7" placeholder="123 456">
     <button type="button" id="go1" class="pri">Get the reply</button>
@@ -43,9 +48,9 @@
   </section>
 
   <section class="card" id="t-pw" hidden>
-    <h2>2. Passwords</h2>
-    <p class="muted small">Only if the lock screen itself won’t start. At the Windows sign-in, choose Other user, or press Ctrl+Alt+Del and Switch user, and sign in as SapphireAdmin.</p>
-    <label for="an">Admin no. <span class="muted small">(on the lock screen; 0 if you can’t see it)</span></label>
+    <h2>3. Passwords</h2>
+    <p class="muted small">Only if the lock screen itself won’t start (then use the Recovery ID from the device’s page in Sapphire, or the serial number on the device). At the Windows sign-in, choose Other user, or press Ctrl+Alt+Del and Switch user, and sign in as SapphireAdmin.</p>
+    <label for="an">Admin no. <span class="muted small">(from the same box; 0 if you can’t see it)</span></label>
     <input id="an" inputmode="numeric" value="0" maxlength="4">
     <details><summary class="small">Other numbers</summary>
       <label for="un">Everyday account’s password no.</label><input id="un" inputmode="numeric" value="0" maxlength="4">
