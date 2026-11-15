@@ -7,8 +7,6 @@ what is typed into it.
 - **Web app:** open the site on a phone or computer and add it to the home screen. After the first visit it works
   with no internet.
 - **One file:** `download/sapphire-recovery.html` opens in any browser from the file itself.
-- **Command line:** `download/sapphire-recovery-<system>`, for Windows, Linux and Mac. `SHA256SUMS` lists their
-  checksums.
 
 The source is kept with Sapphire Pulse; this repository is a published copy.
 
